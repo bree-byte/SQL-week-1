@@ -98,11 +98,11 @@ INSERT INTO beneficiary_partner_data(partner_id,partner,village,beneficiaries,be
 INSERT INTO beneficiary_partner_data(partner_id,partner,village,beneficiaries,beneficiary_type) VALUES(38,'IMC','Howl-Wadaag','32','Households');
 DROP TABLE jurisdiction_hierarchy;
 
-CREATE TABLE jurisdiction_hierarchy(
-jurisdiction_id INT PRIMARY KEY,
-village VARCHAR(40),
-type VARCHAR(20),
-village2 VARCHAR(40) DEFAULT NULL
+CREATE TABLE jurisdiction_hierarchy (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    level VARCHAR(20) NOT NULL,        -- Region, District, or Village
+    parent VARCHAR(50)                 
 );
 
 INSERT INTO jurisdiction_hierarchy VALUES(1,'Middle Shabelle','Region',NULL);
@@ -124,13 +124,7 @@ INSERT INTO jurisdiction_hierarchy VALUES(16,'Kulmis','Village','Balcad');
 INSERT INTO jurisdiction_hierarchy VALUES(17,'Sabuun','Village','Jowhar');
 INSERT INTO jurisdiction_hierarchy VALUES(18,'Bayaxaw','Village','Jowhar');
 
-CREATE TABLE jurisdiction_hierarchy (
-    id INTEGER PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    level VARCHAR(20) NOT NULL,        -- Region, District, or Village
-    parent VARCHAR(50)                 
-);
-
+--- QUESTION 2
 CREATE VIEW district_summary AS
 SELECT 
     d.name AS district_name,
@@ -160,7 +154,7 @@ GROUP BY d.name, r.name;
 
 SELECT * FROM district_summary;
 
--- Question 3
+-- QUESTION 3
 CREATE VIEW partner_summary AS
 SELECT
     b.partner,
