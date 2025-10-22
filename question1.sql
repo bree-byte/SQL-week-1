@@ -96,6 +96,7 @@ INSERT INTO beneficiary_partner_data(partner_id,partner,village,beneficiaries,be
 INSERT INTO beneficiary_partner_data(partner_id,partner,village,beneficiaries,beneficiary_type) VALUES(36,'CESVI','Filtare','7519','Individuals');
 INSERT INTO beneficiary_partner_data(partner_id,partner,village,beneficiaries,beneficiary_type) VALUES(37,'CESVI','Howl-Wadaag','6870','Individuals');
 INSERT INTO beneficiary_partner_data(partner_id,partner,village,beneficiaries,beneficiary_type) VALUES(38,'IMC','Howl-Wadaag','32','Households');
+
 DROP TABLE jurisdiction_hierarchy;
 
 CREATE TABLE jurisdiction_hierarchy (
